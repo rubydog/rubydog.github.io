@@ -10,22 +10,21 @@
 <html>
 	<body>
 		<div class='container-fluid'>
-			<h2>Device Orientation</h2>
-			<table>
+			<div class="col-md-4">
+			<table class='table'>
 				<tr>
-					<td>Event Supported</td>
-					<td id="doEvent"></td>
-				</tr>
-				<tr>
-					<td>Tilt Left/Right [gamma]</td>
+					<td>Tilt Left/Right</td>
+					<td>gamma</td>
 					<td id="doTiltLR"></td>
 				</tr>
 				<tr>
-					<td>Tilt Front/Back [beta]</td>
+					<td>Tilt Front/Back</td>
+					<td>beta</td>
 					<td id="doTiltFB"></td>
 				</tr>
 				<tr>
-					<td>Direction [alpha]</td>
+					<td>Directio</td>
+					<td>alpha</td>
 					<td id="doDirection"></td>
 				</tr>
 			</table>
@@ -33,30 +32,31 @@
 			<div class="image" style="perspective:300px;">
 				<img src='html5-logo-thum.png' id="imgLogo" class="logo">
 			</div>
+		</div>
 
-			<h2>Device Motion</h2>
-			<table>
-				<tr>
-					<td>Event Supported</td>
-					<td id="dmEvent"></td>
-				</tr>
-				<tr>
-					<td>acceleration</td>
-					<td id="moAccel"></td>
-				</tr>
-				<tr>
-					<td>accelerationIncludingGravity</td>
-					<td id="moAccelGrav"></td>
-				</tr>
-				<tr>
-					<td>rotationRate</td>
-					<td id="moRotation"></td>
-				</tr>
-				<tr>
-					<td>interval</td>
-					<td id="moInterval"></td>
-				</tr>
-			</table>
+			<!-- <h2>Device Motion</h2> -->
+			<!-- <table> -->
+			<!-- 	<tr> -->
+			<!-- 		<td>Event Supported</td> -->
+			<!-- 		<td id="dmEvent"></td> -->
+			<!-- 	</tr> -->
+			<!-- 	<tr> -->
+			<!-- 		<td>acceleration</td> -->
+			<!-- 		<td id="moAccel"></td> -->
+			<!-- 	</tr> -->
+			<!-- 	<tr> -->
+			<!-- 		<td>accelerationIncludingGravity</td> -->
+			<!-- 		<td id="moAccelGrav"></td> -->
+			<!-- 	</tr> -->
+			<!-- 	<tr> -->
+			<!-- 		<td>rotationRate</td> -->
+			<!-- 		<td id="moRotation"></td> -->
+			<!-- 	</tr> -->
+			<!-- 	<tr> -->
+			<!-- 		<td>interval</td> -->
+			<!-- 		<td id="moInterval"></td> -->
+			<!-- 	</tr> -->
+			<!-- </table> -->
 		</div>
 	</body>
 </html>
@@ -64,8 +64,6 @@
 <script>
 	if (window.DeviceOrientationEvent) {
 		console.log("Device orientation supported");
-
-		document.getElementById("doEvent").innerHtml = "DeviceOrientation";
 
 		window.addEventListener('deviceorientation', function(eventData) {
 			var tiltLR = eventData.gamma;
