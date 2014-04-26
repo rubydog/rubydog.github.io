@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <head>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" media="all"/>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css" media="all"/>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
 </head>
 
 <html>
@@ -62,9 +65,9 @@
 			var tiltLR = eventData.gamma;
 			var tiltFB = eventData.beta;
 			var dir = eventData.alpha;
-	document.getElementById("doTiltLR").innerHTML = Math.round(tiltLR);
-	document.getElementById("doTiltFB").innerHTML = Math.round(tiltFB);
-	document.getElementById("doDirection").innerHTML = Math.round(dir);
+			document.getElementById("doTiltLR").innerHTML = Math.round(tiltLR);
+			document.getElementById("doTiltFB").innerHTML = Math.round(tiltFB);
+			document.getElementById("doDirection").innerHTML = Math.round(dir);
 		}, false);
 	}
 	else
