@@ -8,7 +8,7 @@
 
 <html>
 	<body>
-		<div class='main'>
+		<div class='container-fluid'>
 			<h2>Device Orientation</h2>
 			<table>
 				<tr>
@@ -28,6 +28,10 @@
 					<td id="doDirection"></td>
 				</tr>
 			</table>
+
+			<div class="image" style="perspective:300px;">
+				<img src='html5-logo-thum.png' id="imgLogo" class="logo">
+			</div>
 
 			<h2>Device Motion</h2>
 			<table>
@@ -69,6 +73,15 @@
 			document.getElementById("doTiltLR").innerHTML = Math.round(tiltLR);
 			document.getElementById("doTiltFB").innerHTML = Math.round(tiltFB);
 			document.getElementById("doDirection").innerHTML = Math.round(dir);
+
+			var logo = document.getElementbyId("logo");
+			logo.style.webkitTransform =
+			"rotate(" + tiltLR + "deg) rotate3d(1,0,0 " + (tiltFB*-1) + "deg)";
+			logo.style.MozTransform = "rotate(" + tiltLR + "deg)";
+			logo.style.transform =
+			"rotate(" + tiltLR + "deg) rotate3d(1,0,0 " + (tiltFB*-1) + "deg)";
+
+
 		}, false);
 	}
 	else
