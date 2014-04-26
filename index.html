@@ -3,6 +3,7 @@
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" media="all"/>
 	<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css" media="all"/>
 	<link rel="stylesheet" href="flatui/css/flat-ui.css" medial="all" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 </head>
 
@@ -73,15 +74,12 @@
 			document.getElementById("doTiltLR").innerHTML = Math.round(tiltLR);
 			document.getElementById("doTiltFB").innerHTML = Math.round(tiltFB);
 			document.getElementById("doDirection").innerHTML = Math.round(dir);
-
-			var logo = document.getElementbyId("logo");
+			var logo = document.getElementById("imgLogo");
 			logo.style.webkitTransform =
-			"rotate(" + tiltLR + "deg) rotate3d(1,0,0 " + (tiltFB*-1) + "deg)";
-			logo.style.MozTransform = "rotate(" + tiltLR + "deg)";
-			logo.style.transform =
-			"rotate(" + tiltLR + "deg) rotate3d(1,0,0 " + (tiltFB*-1) + "deg)";
-
-
+			  "rotate("+ tiltLR +"deg) rotate3d(1,0,0, "+ (tiltFB*-1)+"deg)";
+			  logo.style.MozTransform = "rotate("+ tiltLR +"deg)";
+			  logo.style.transform =
+			    "rotate("+ tiltLR +"deg) rotate3d(1,0,0, "+ (tiltFB*-1)+"deg)";
 		}, false);
 	}
 	else
